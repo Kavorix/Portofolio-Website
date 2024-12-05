@@ -9,7 +9,7 @@ export const personalData = {
   address: "",
   github: "https://github.com/kavorix",
   facebook: "",
-  linkedIn: "",
+  linkedIn: "https://www.linkedin.com/in/sato-daiki-japan/",
   twitter: "",
   stackOverflow: "",
   leetcode: "",
