@@ -72,15 +72,33 @@ import vuetifyjs from '/public/svg/skills/vuetifyjs.svg';
 import webix from '/public/svg/skills/webix.svg';
 import wolframalpha from '/public/svg/skills/wolframalpha.svg';
 import wordpress from '/public/svg/skills/wordpress.svg';
+import nodeJS from '/public/svg/skills/nodeJS.svg';
+import fastapi from '/public/svg/skills/fastapi.svg';
+import flask from '/public/svg/skills/flask.svg';
+import golang from '/public/svg/skills/golang.svg';
+import rust from '/public/svg/skills/rust.png';
+import solidity from '/public/svg/skills/solidity.png';
 
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
   switch (skillID) {
+    case 'fastapi':
+      return fastapi;
+    case 'flask':
+      return flask;
+    case 'golang':
+      return golang;
+    case 'rust':
+      return rust;
+    case 'solidity':
+      return solidity;
     case 'gcp':
       return gcp;
     case 'html':
       return html;
+    case 'node js':
+      return nodeJS;
     case 'photoshop':
       return photoshop;
     case 'docker':
@@ -131,7 +149,7 @@ export const skillsImage = (skill) => {
       return vitejs;
     case 'vuetifyjs':
       return vuetifyjs;
-    case 'c':
+    case 'c++':
       return c;
     case 'c++':
       return cplusplus;
