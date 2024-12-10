@@ -1,5 +1,5 @@
 export const personalData = {
-  name: "Kavorix",
+  name: "Sato Daiki",
   profile: "/profile.png",
   designation: "Full-Stack and Blockchain Developer",
   description:
@@ -13,7 +13,7 @@ export const personalData = {
   twitter: "",
   stackOverflow: "",
   leetcode: "",
-  devUsername: "kavorix",
+  devUsername: "sato",
   resume:
     "https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing",
 };
