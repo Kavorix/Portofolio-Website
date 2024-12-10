@@ -6,7 +6,7 @@ export const personalData = {
     "I am Full-Stack and Blockchain Developer specializing in DEXs, dApps, NFT marketplaces, Wallets, Bridges, Telegram mini apps, and Launchpads, with a focus on security and multi-chain integration. My top priority is delivering a high-quality project on time",
   email: "kavorix5@gmail.com",
   phone: "",
-  address: "",
+  address: "Fukuoka, Japan",
   github: "https://github.com/kavorix",
   facebook: "",
   linkedIn: "https://www.linkedin.com/in/sato-daiki-japan/",
