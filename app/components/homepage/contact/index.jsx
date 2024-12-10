@@ -29,7 +29,7 @@ function ContactSection() {
               />
               <span>{personalData.email}</span>
             </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            {/* <p className="text-sm md:text-xl flex items-center gap-3">
               <IoMdCall
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}
@@ -37,7 +37,7 @@ function ContactSection() {
               <span>
                 {personalData.phone}
               </span>
-            </p>
+            </p> */}
             <p className="text-sm md:text-xl flex items-center gap-3">
               <CiLocationOn
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
@@ -61,7 +61,7 @@ function ContactSection() {
                 size={48}
               />
             </Link>
-            <Link target="_blank" href={personalData.twitter}>
+            {/* <Link target="_blank" href={personalData.twitter}>
               <FaXTwitter
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
@@ -78,7 +78,7 @@ function ContactSection() {
                 className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={48}
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

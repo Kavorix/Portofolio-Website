@@ -7,5 +7,5 @@ export const contactsData = {
   linkedIn: "https://www.linkedin.com/in/sato-daiki-japan/",
   twitter: "",
   stackOverflow: "",
-  devUsername: "kavorix",
+  devUsername: "sato",
 };
