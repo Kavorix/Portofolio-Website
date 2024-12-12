@@ -3,7 +3,7 @@ export const personalData = {
   profile: "/profile.png",
   designation: "Full-Stack and Blockchain Developer",
   description:
-    "I am Full-Stack and Blockchain Developer specializing in DEXs, dApps, NFT marketplaces, Wallets, Bridges, Telegram mini apps, and Launchpads, with a focus on security and multi-chain integration. My top priority is delivering a high-quality project on time",
+    "I am a passionate Full Stack and Blockchain Developer with over 8 years of experience in web development and 3+ years focused on blockchain technology. I specialize in building DEXs, Dapps, NFT marketplaces, wallets, bridges, Telegram Mini App, launchpads, Trading Bot and Meme coin. My core skills include TypeScript, Rust, Solidity, C++, Python, and Go, and I have extensive experience working across multiple blockchain ecosystems, including Ethereum, Solana, Polkadot, Cosmos, Polygon, and more.",
   email: "kavorix5@gmail.com",
   phone: "",
   address: "Fukuoka, Japan",
