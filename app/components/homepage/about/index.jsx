@@ -19,10 +19,12 @@ function AboutSection() {
             Who I am?
           </p>
           <p className="text-gray-200 text-sm lg:text-lg">
-            {personalData.description}
+            I am a passionate Full Stack and Blockchain Developer with over 8 years of experience in web development and 3+ years focused on blockchain technology.
+            I specialize in developing Frontend, Backend, SmartContracts, DEXs, DApps, Defi, Dao, NFT marketplaces, wallets, bridges, Telegram Mini App, Trading Bot, Discord Bot, Telegram Bot, Meme coin and launchpads.
+            My core skills include TypeScript, Rust, Solidity, C++, Python, Php, Java, SQL and Go, and I have extensive experience working across multiple blockchain ecosystems, including Ethereum, Solana, Polkadot, Cosmos, Polygon, Ton, Tron and more.
           </p>
         </div>
-        <div className="flex justify-center order-1 lg:order-2">
+        <div className="flex justify-center items-center order-1 lg:order-2">
           <Image
             src={personalData.profile}
             width={280}
@@ -32,7 +34,7 @@ function AboutSection() {
           />
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
