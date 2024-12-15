@@ -111,17 +111,11 @@ function HeroSection() {
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">Typescript</span>
+                <span className="text-amber-300">Frontend Development</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Rust</span>
+                <span className="text-amber-300">Backend Development</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Solidity</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Go</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Python</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">C++</span>
+                <span className="text-amber-300">SmartContranct Development</span>
                 <span className="text-gray-400">{"'],"}</span>
               </div>
               <div>
