@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsHeartFill } from 'react-icons/bs';
 import { FaCommentAlt } from 'react-icons/fa';
+import { FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FiLink } from "react-icons/fi";
 
 function BlogCard({ blog }) {
 
@@ -19,29 +22,29 @@ function BlogCard({ blog }) {
           className='h-full w-full group-hover:scale-110 transition-all duration-300'
         />
       </div>
-      <div className="p-2 sm:p-3 flex flex-col">
-        <div className="flex justify-between items-center text-[#16f2b3] text-sm">
-          <p>{timeConverter(blog.published_at)}</p>
+      <div className="p-2 sm:p-3 flex flex-col cursor-pointer">
+        <div className="flex justify-end items-center text-[#16f2b3] text-sm pt-2 pr-2">
+          {/* <p>{timeConverter(blog.published_at)}</p> */}
           <div className="flex items-center gap-3">
-            <p className="flex items-center gap-1">
-              <BsHeartFill />
-              <span>{blog.public_reactions_count}</span>
-            </p>
-            {blog.comments_count > 0 &&
-              <p className="flex items-center gap-1">
-                <FaCommentAlt />
-                <span>{blog.comments_count}</span>
-              </p>
-            }
+            {blog?.github_url && (
+              <Link target="_blank" href={blog.github_url} className="hover:text-pink-500 hover:scale-110 transition-all">
+                <p className="flex items-center gap-1">
+                  <span><FaGithub size={30} /></span>
+                </p>
+              </Link>)}
+            {blog?.project_url && (
+              <Link target="_blank" href={blog?.project_url} className="hover:text-pink-500 hover:scale-110 transition-all">
+                <p className="flex items-center gap-1">
+                  <span><FiLink size={30} /></span>
+                </p>
+              </Link>)}
           </div>
         </div>
-        <Link target='_blank' href={blog.url}>
-          <p className='my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500'>
-            {blog.title}
-          </p>
-        </Link>
+        <p className='my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium'>
+          {blog.title}
+        </p>
         <p className='mb-2 text-sm text-[#16f2b3]'>
-          {`${blog.reading_time_minutes} Min Read`}
+          {/* {`${blog.reading_time_minutes} Min Read`} */}
         </p>
         <p className='text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3'>
           {blog.description}
