@@ -7,7 +7,7 @@ export const blogData = [
       "EchoDEX is a native Decentralized Exchange built on the Linea Network.",
     cover_image:
       "/project/dex/echodex/echodex.png",
-    github_url: "https://github.com/Kavorix/echoDex",
+    github_url: "https://github.com",
     project_url: "https://www.echodex.io/swap"
   },
   {
@@ -18,7 +18,7 @@ export const blogData = [
       "An efficient and user-friendly DEX natively built on B² network.",
     cover_image:
       "/project/dex/glowswap/1.png",
-    github_url: "https://github.com/Kavorix/glowswap",
+    github_url: "",
     project_url: "https://glowswap.io/swap"
   },
   {
@@ -29,7 +29,7 @@ export const blogData = [
       "Xenos Swap is a decentralized cryptocurrency exchange established in 2023.",
     cover_image:
       "/project/dex/xenosswap/1.png",
-    github_url: "https://github.com/Kavorix/xenosFinanceSwap",
+    github_url: "",
     project_url: "https://www.xenosfinance.xyz/swap"
   },
   {
@@ -40,7 +40,7 @@ export const blogData = [
       "Rage is a liquidity and treasury management protocol.",
     cover_image:
       "/project/dapp/ragetrader/1.png",
-    github_url: "https://github.com/Kavorix/rage-trade",
+    github_url: "",
     project_url: "https://www.app.rage.trade/trade/ETH-USD"
   },
   {
@@ -51,7 +51,7 @@ export const blogData = [
       "A Solana-powered decentralized trading protocol.",
     cover_image:
       "/project/dapp/drift/1.png",
-    github_url: "https://github.com/Kavorix/drift",
+    github_url: "",
     project_url: "https://app.drift.trade/"
   },
   {
@@ -62,7 +62,7 @@ export const blogData = [
       "Nexus Mutual provides an alternative to insurance for Ethereum users.",
     cover_image:
       "/project/dapp/nexus/1.png",
-    github_url: "https://github.com/Kavorix/nexus-mutual",
+    github_url: "",
     project_url: "https://v2.nexusmutual.io/cover/buy-cover?product-types=19%2C0%2C6%2C11"
   },
   {
@@ -73,7 +73,7 @@ export const blogData = [
       "The world's most diverse DeFi lending and margin trading platform.",
     cover_image:
       "/project/dapp/fringe/1.png",
-    github_url: "https://github.com/Kavorix/fringe-finance",
+    github_url: "",
     project_url: "https://app.fringe.fi/"
   },
   {
@@ -84,7 +84,7 @@ export const blogData = [
       "The most advanced NFT marketplace on Algorand",
     cover_image:
       "/project/nft/exa/1.png",
-    github_url: "https://github.com/Kavorix/exa-nft-marketplace",
+    github_url: "",
     project_url: "https://exa.market/"
   },
   {
@@ -95,7 +95,7 @@ export const blogData = [
       "tofuNFT is the largest multichain NFT marketplace lives on 30+ EVM-compatible public chains, focused on GameFi.",
     cover_image:
       "/project/nft/tofuNFT/1.png",
-    github_url: "https://github.com/Kavorix/tofunft-marketplace",
+    github_url: "",
     project_url: "https://tofunft.com/"
   },
   {
@@ -106,7 +106,7 @@ export const blogData = [
       "The Bomb Crypto marketplace is a native NFT marketplace in the game Bomb Crypto where players can trade their bomber heroes",
     cover_image:
       "/project/nft/bomb/1.png",
-    github_url: "https://github.com/Kavorix/bomb-crypto-marketplace",
+    github_url: "",
     project_url: "https://market.bombcrypto.io/"
   },
   {
