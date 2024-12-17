@@ -1,3 +1,5 @@
+'use client';
+
 import { personalData } from "@/utils/data/personal-data";
 import AboutSection from "./components/homepage/about";
 import Blog from "./components/homepage/project";
@@ -8,7 +10,7 @@ import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
 
-export default async function Home() {
+export default function Home() {
 
   return (
     <>

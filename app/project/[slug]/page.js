@@ -1,4 +1,5 @@
-// @flow strict
+'use client';
+
 import { personalData } from "@/utils/data/personal-data";
 
 async function getBlog(slug) {
@@ -12,10 +13,10 @@ async function getBlog(slug) {
   return data;
 };
 
-async function BlogDetails({params}) {
+async function BlogDetails({ params }) {
   const slug = params.slug;
   const blog = await getBlog(slug);
- 
+
   return (
     <div>
     </div>
