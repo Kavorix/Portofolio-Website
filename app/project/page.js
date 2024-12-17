@@ -4,20 +4,7 @@ import { personalData } from "@/utils/data/personal-data";
 import BlogCard from "../components/homepage/project/blog-card";
 import { blogData } from "@/utils/data/blogData";
 
-// async function getBlogs() {
-//   const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
-
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch data')
-//   }
-
-//   const data = await res.json();
-//   return data;
-// };
-
 async function page() {
-  // const blogs = await getBlogs();
-
   return (
     <div className="py-8">
       <div className="flex justify-center my-5 lg:py-8">
