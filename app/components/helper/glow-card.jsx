@@ -1,83 +1,77 @@
 "use client"
 
 import { useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 
+// Create the GlowCard component with no SSR
 const GlowCard = ({ children, identifier }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Check if we're running in the browser
-    if (typeof window === 'undefined') return;
+    const initializeGlowEffect = async () => {
+      const CONTAINER = containerRef.current;
+      if (!CONTAINER) return;
 
-    const CONTAINER = containerRef.current;
-    const CARDS = CONTAINER.querySelectorAll(`.glow-card-${identifier}`);
+      const CARDS = CONTAINER.querySelectorAll(`.glow-card-${identifier}`);
+      
+      const CONFIG = {
+        proximity: 40,
+        spread: 80,
+        blur: 12,
+        gap: 32,
+        vertical: false,
+        opacity: 0,
+      };
 
-    const CONFIG = {
-      proximity: 40,
-      spread: 80,
-      blur: 12,
-      gap: 32,
-      vertical: false,
-      opacity: 0,
-    };
+      const UPDATE = (event) => {
+        if (!event) return;
 
-    const UPDATE = (event) => {
-      // Skip if no event is provided
-      if (!event) return;
-
-      for (const CARD of CARDS) {
-        const CARD_BOUNDS = CARD.getBoundingClientRect();
-        
-        // Get the mouse position relative to the card
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-        
-        // Calculate the distance between the mouse and the card
-        const centerX = CARD_BOUNDS.left + CARD_BOUNDS.width / 2;
-        const centerY = CARD_BOUNDS.top + CARD_BOUNDS.height / 2;
-        const distanceX = mouseX - centerX;
-        const distanceY = mouseY - centerY;
-        
-        // Calculate the absolute distance
-        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-        
-        // Calculate the angle between mouse and card center
-        const angle = (Math.atan2(distanceY, distanceX) * 180) / Math.PI;
-        
-        // Update the card's custom properties based on mouse proximity
-        if (distance < CONFIG.proximity) {
-          CARD.style.setProperty('--distance', distance);
-          CARD.style.setProperty('--angle', angle);
-          CARD.style.setProperty('--opacity', 1);
-        } else {
-          CARD.style.setProperty('--opacity', CONFIG.opacity);
+        for (const CARD of CARDS) {
+          const CARD_BOUNDS = CARD.getBoundingClientRect();
+          
+          const mouseX = event.clientX;
+          const mouseY = event.clientY;
+          
+          const centerX = CARD_BOUNDS.left + CARD_BOUNDS.width / 2;
+          const centerY = CARD_BOUNDS.top + CARD_BOUNDS.height / 2;
+          const distanceX = mouseX - centerX;
+          const distanceY = mouseY - centerY;
+          
+          const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+          const angle = (Math.atan2(distanceY, distanceX) * 180) / Math.PI;
+          
+          if (distance < CONFIG.proximity) {
+            CARD.style.setProperty('--distance', distance);
+            CARD.style.setProperty('--angle', angle);
+            CARD.style.setProperty('--opacity', 1);
+          } else {
+            CARD.style.setProperty('--opacity', CONFIG.opacity);
+          }
         }
-      }
-    };
+      };
 
-    // Only add event listener if we're in the browser
-    if (typeof window !== 'undefined') {
+      const RESTYLE = () => {
+        CONTAINER.style.setProperty('--gap', CONFIG.gap);
+        CONTAINER.style.setProperty('--blur', CONFIG.blur);
+        CONTAINER.style.setProperty('--spread', CONFIG.spread);
+        CONTAINER.style.setProperty(
+          '--direction',
+          CONFIG.vertical ? 'column' : 'row'
+        );
+      };
+
+      RESTYLE();
       document.body.addEventListener('pointermove', UPDATE);
-    }
 
-    const RESTYLE = () => {
-      CONTAINER.style.setProperty('--gap', CONFIG.gap);
-      CONTAINER.style.setProperty('--blur', CONFIG.blur);
-      CONTAINER.style.setProperty('--spread', CONFIG.spread);
-      CONTAINER.style.setProperty(
-        '--direction',
-        CONFIG.vertical ? 'column' : 'row'
-      );
-    };
-
-    RESTYLE();
-
-    return () => {
-      // Only remove event listener if we're in the browser
-      if (typeof window !== 'undefined') {
+      return () => {
         document.body.removeEventListener('pointermove', UPDATE);
-      }
+      };
     };
+
+    // Only run in browser
+    if (typeof window !== 'undefined') {
+      initializeGlowEffect();
+    }
   }, [identifier]);
 
   return (
@@ -88,6 +82,9 @@ const GlowCard = ({ children, identifier }) => {
       </article>
     </div>
   );
-}
+};
 
-export default GlowCard;
+// Export a non-SSR version of the component
+export default dynamic(() => Promise.resolve(GlowCard), {
+  ssr: false
+});
