@@ -10,7 +10,7 @@ import ScrollToTop from "./components/helper/scroll-to-top";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Sato Daiki",
+  title: "kavorix",
   description:
     "This is the portfolio of Sato Daiki. I am a Full-Stack and Blockchain Developer.",
 };
