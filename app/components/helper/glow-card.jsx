@@ -1,11 +1,9 @@
-'use client';
-
-import { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    // Ensure this runs only on the client side
-    if (typeof window === 'undefined') return;
+    // Guard for SSR
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
     // Query DOM elements specific to this instance
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
