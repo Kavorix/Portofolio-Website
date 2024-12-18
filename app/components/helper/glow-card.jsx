@@ -1,14 +1,16 @@
+'use client';
+
 import { useEffect } from 'react';
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    // Run only on the client side
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return; // Ensure this runs only on the client side
 
+    // Query DOM elements specific to this instance
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
-    if (!CONTAINER || CARDS.length === 0) return;
+    if (!CONTAINER || CARDS.length === 0) return; // Exit early if DOM elements are not found
 
     const CONFIG = {
       proximity: 40,
@@ -51,6 +53,7 @@ const GlowCard = ({ children, identifier }) => {
     };
 
     const RESTYLE = () => {
+      // Update container styles based on config
       CONTAINER.style.setProperty('--gap', CONFIG.gap);
       CONTAINER.style.setProperty('--blur', CONFIG.blur);
       CONTAINER.style.setProperty('--spread', CONFIG.spread);
@@ -60,20 +63,22 @@ const GlowCard = ({ children, identifier }) => {
       );
     };
 
+    // Attach event listeners and apply initial styles
     document.body.addEventListener('pointermove', UPDATE);
-
     RESTYLE();
     UPDATE();
 
-    // Cleanup event listener
+    // Cleanup event listener on unmount
     return () => {
       document.body.removeEventListener('pointermove', UPDATE);
     };
-  }, [identifier]);
+  }, [identifier]); // Ensure identifier updates trigger re-execution
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
-      <article className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}>
+      <article
+        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}
+      >
         <div className="glows"></div>
         {children}
       </article>
