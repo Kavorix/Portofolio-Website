@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Ensure this runs only on the client side
+    // Ensure this runs only on the client side
+    if (typeof window === 'undefined') return;
 
     // Query DOM elements specific to this instance
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
-    if (!CONTAINER || CARDS.length === 0) return; // Exit early if DOM elements are not found
+    if (!CONTAINER || CARDS.length === 0) return;
 
     const CONFIG = {
       proximity: 40,
@@ -53,7 +54,6 @@ const GlowCard = ({ children, identifier }) => {
     };
 
     const RESTYLE = () => {
-      // Update container styles based on config
       CONTAINER.style.setProperty('--gap', CONFIG.gap);
       CONTAINER.style.setProperty('--blur', CONFIG.blur);
       CONTAINER.style.setProperty('--spread', CONFIG.spread);
@@ -63,16 +63,15 @@ const GlowCard = ({ children, identifier }) => {
       );
     };
 
-    // Attach event listeners and apply initial styles
     document.body.addEventListener('pointermove', UPDATE);
+
     RESTYLE();
     UPDATE();
 
-    // Cleanup event listener on unmount
     return () => {
       document.body.removeEventListener('pointermove', UPDATE);
     };
-  }, [identifier]); // Ensure identifier updates trigger re-execution
+  }, [identifier]);
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
