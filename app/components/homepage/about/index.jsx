@@ -1,8 +1,7 @@
-'use client';
+"use client";
 
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
-
 
 function AboutSection() {
   return (
@@ -19,9 +18,21 @@ function AboutSection() {
             Who I am?
           </p>
           <p className="text-gray-200 text-sm lg:text-lg">
-            I am a passionate Full Stack and Blockchain Developer with over 8 years of experience in web development and 3+ years focused on blockchain technology.
-            I specialize in developing Frontend, Backend, SmartContracts, DEXs, DApps, Defi, Dao, NFT marketplaces, wallets, bridges, Telegram Mini App, Trading Bot, Discord Bot, Telegram Bot, Meme coin and launchpads.
-            My core skills include TypeScript, Rust, Solidity, C++, Python, Php, Java, SQL and Go, and I have extensive experience working across multiple blockchain ecosystems, including Ethereum, Solana, Polkadot, Cosmos, Polygon, Ton, Tron and more.
+            I am a passionate Full Stack and Blockchain Developer with over 8
+            years of experience in web development and 3+ years focused on
+            blockchain technology.
+            <br />
+            <br />
+            I specialize in developing Frontend, Backend, SmartContracts, DEXs,
+            DApps, Defi, Dao, NFT marketplaces, Wallets, Bridges, Gaming,
+            Telegram Mini App, Trading Bot, Discord Bot, Telegram Bot, Meme coin
+            and launchpads.
+            <br />
+            <br />
+            My core skills include TypeScript, Rust, Solidity, C++, Python, Go,
+            Java, SQL and Php, and I have extensive experience working across
+            multiple blockchain ecosystems, including Ethereum, Solana, Aptos,
+            Sui, Stellar, Polkadot, Cosmos, Polygon, Ton, Tron and more.
           </p>
         </div>
         <div className="flex justify-center items-center order-1 lg:order-2">
@@ -34,8 +45,8 @@ function AboutSection() {
           />
         </div>
       </div>
-    </div >
+    </div>
   );
-};
+}
 
 export default AboutSection;
